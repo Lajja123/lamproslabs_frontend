@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Local font faces: update file names/paths when you add fonts */
+@font-face {
+  font-family: "CS Bohemian Demo";
+  src: url("/fonts/CSBohemianDemo.woff2") format("woff2"),
+    url("/fonts/CSBohemianDemo.woff") format("woff");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Mori";
+  src: url("/fonts/PPMori-Regular.woff2") format("woff2"),
+    url("/fonts/PPMori-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Mori";
+  src: url("/fonts/PPMori-SemiBold.woff2") format("woff2"),
+    url("/fonts/PPMori-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  /* Expose font CSS variables for theme mapping */
+  --font-display: "CS Bohemian Demo";
+  --font-body: "PP Mori";
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Marquee animation */
+.marquee {
+  position: relative;
+}
+.marquee__track {
+  width: max-content;
+  animation: marquee-scroll linear infinite;
+}
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
