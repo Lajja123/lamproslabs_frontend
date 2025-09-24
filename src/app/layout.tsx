@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import Marquee from "@/components/layout/Marquee";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       >
         <Marquee text="Driving Mainstream Adoption, Empowering Developers, and Cultivating the Future of Web3" />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,9 +1,10 @@
-import Hero from "@/components/Hero";
+import Faq from "../components/layout/Faq";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full">
-      <Hero />
+    <main className=" w-full">
+      {/* <Hero /> */}
+      <Faq />
     </main>
   );
 }
