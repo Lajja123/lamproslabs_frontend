@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Marquee from "@/components/layout/Marquee";
-// import Navbar from "@/components/layout/Navbar";
-// import Footer from "@/components/layout/Footer";
+import Marquee from "@/components/UI/Marquee";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const PPMori = localFont({
   src: "./fonts/PPMori-Regular.otf",
@@ -49,11 +49,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${CSBohemian.variable} ${PPMori.variable}`}>
+      <body
+        className={`${CSBohemian.variable} ${PPMori.variable} min-h-screen`}
+      >
         <Marquee text="Driving Mainstream Adoption, Empowering Developers, and Cultivating the Future of Web3" />
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

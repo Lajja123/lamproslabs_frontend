@@ -2,6 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
+import { Typography } from "./Typography";
+import star from "../../assests/star.svg";
 
 type MarqueeProps = {
   text: string;
@@ -11,16 +13,20 @@ type MarqueeProps = {
 
 export default function Marquee({
   text,
-  separatorSrc = "/images/star.svg",
+
   speedMs = 70000,
 }: MarqueeProps) {
   const items = Array.from({ length: 8 }).map((_, i) => (
     <li key={i} className="flex items-center gap-4">
-      <span className="whitespace-nowrap" style={{ fontFamily: "PP Mori" }}>
+      <Typography
+        variant="body1"
+        className="whitespace-nowrap --font-pp-mori uppercase"
+        color="primary"
+      >
         {text}
-      </span>
+      </Typography>
       <Image
-        src={separatorSrc}
+        src={star}
         alt="separator"
         className="h-3 w-3 opacity-80"
         width={100}
@@ -30,10 +36,7 @@ export default function Marquee({
   ));
 
   return (
-    <div
-      className="marquee w-full overflow-hidden border-b border-black/10 bg-[#F3FBD4] text-sm sm:text-md tracking-wide uppercase text-[#1A1A1A]"
-      style={{ fontFamily: "PP Mori" }}
-    >
+    <div className="marquee w-full overflow-hidden border-b border-black/10 bg-[#F3FBD4]">
       <div
         className="marquee__track flex gap-8"
         style={{
