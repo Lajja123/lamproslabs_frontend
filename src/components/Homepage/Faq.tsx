@@ -14,19 +14,20 @@ export default function Faq() {
       <div className="w-full border-y border-black divide-y divide-black">
         {/* Row 1 */}
         <div className="grid grid-cols-12 items-center ">
-          <div className="col-span-2 py-6 md:col-span-1 border-r border-black text-center font-mono text-sm md:text-base">
+          <div className="col-span-2 p-10 md:col-span-1 border-r border-black text-center  text-sm md:text-base">
             <Typography
               variant="overline"
-              color="#000000"
-              className="font-mono text-sm md:text-base"
+              color="primary"
+              weight="bold"
+              className="--font-cs-bohemian text-sm md:text-base"
             >
               01
             </Typography>
           </div>
           <div className="col-span-9 px-4">
             <Typography
-              variant="h6"
-              color="#000000"
+              variant="body2"
+              color="primary"
               weight="medium"
               className="text-base md:text-lg"
             >
@@ -46,20 +47,22 @@ export default function Faq() {
 
         {/* Row 2 (expanded answer style) */}
         <div className="grid grid-cols-12 items-start">
-          <div className=" py-6 col-span-2 md:col-span-1 border-r border-black text-center font-mono text-sm md:text-base">
+          <div className=" p-10 col-span-2 md:col-span-1 border-r border-black text-center font-mono text-sm md:text-base">
             <Typography
               variant="overline"
-              color="#000000"
-              className="font-mono text-sm md:text-base"
+              color="primary"
+              weight="bold"
+              className="--font-cs-bohemian text-sm md:text-base"
             >
               02
             </Typography>
           </div>
-          <div className="col-span-9 px-4">
+          <div className="col-span-9 p-10">
             <Typography
               variant="body2"
-              color="#000000"
-              className="text-sm md:text-base leading-6 md:leading-7"
+              color="primary"
+              weight="medium"
+              className="text-base md:text-lg"
             >
               Welcome Aboard! Lampros DAO Offers Training Sessions, Hackathons,
               Bootcamps, And Cohorts Designed Specifically To Help Budding
@@ -80,19 +83,20 @@ export default function Faq() {
 
         {/* Row 3 */}
         <div className="grid grid-cols-12 items-center">
-          <div className=" py-6 col-span-2 md:col-span-1 border-r border-black text-center font-mono text-sm md:text-base">
+          <div className="p-10 col-span-2 md:col-span-1 border-r border-black text-center font-mono text-sm md:text-base">
             <Typography
               variant="overline"
-              color="#000000"
-              className="font-mono text-sm md:text-base"
+              color="primary"
+              weight="bold"
+              className="--font-cs-bohemian text-sm md:text-base"
             >
               03
             </Typography>
           </div>
           <div className="col-span-9 px-4">
             <Typography
-              variant="h6"
-              color="#000000"
+              variant="body2"
+              color="primary"
               weight="medium"
               className="text-base md:text-lg"
             >
