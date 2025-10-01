@@ -11,30 +11,31 @@ export default function Faq() {
   return (
     <>
       {/* Rows */}
-      <div className="w-full border-y border-black divide-y divide-black">
+      <div className="w-full border-y border-black  divide-black">
         {/* Row 1 */}
-        <div className="grid grid-cols-12 items-center ">
-          <div className="col-span-2 p-10 md:col-span-1 border-r border-black text-center  text-sm md:text-base">
+
+        <div className="flex flex-row items-center ">
+          <div className="w-20 p-10 border-r border-black text-center text-sm md:text-base">
             <Typography
               variant="overline"
               color="primary"
               weight="bold"
-              className="--font-cs-bohemian text-sm md:text-base"
+              className="font-psygen text-sm md:text-base"
             >
               01
             </Typography>
           </div>
-          <div className="col-span-9 px-4">
+          <div className="flex-1 px-4">
             <Typography
               variant="body2"
               color="primary"
-              weight="medium"
+              weight="semibold"
               className="text-base md:text-lg"
             >
               What&apos;s The Core Vision Of Lampros DAO?
             </Typography>
           </div>
-          <div className="col-span-1 flex justify-end pr-2">
+          <div className="w-20 flex justify-end pr-2">
             <Image
               src={top}
               alt="collapse item"
@@ -44,66 +45,59 @@ export default function Faq() {
             />
           </div>
         </div>
-
-        {/* Row 2 (expanded answer style) */}
-        <div className="grid grid-cols-12 items-start">
-          <div className=" p-10 col-span-2 md:col-span-1 border-r border-black text-center font-mono text-sm md:text-base">
+        <div className="flex flex-row    items-center">
+          <div className="w-20 p-10 border-r border-black text-center text-sm md:text-base">
             <Typography
               variant="overline"
               color="primary"
               weight="bold"
-              className="--font-cs-bohemian text-sm md:text-base"
+              className="font-psygen  text-sm md:text-base"
             >
               02
             </Typography>
           </div>
-          <div className="col-span-9 p-10">
+          <div className="flex-1 px-4">
             <Typography
               variant="body2"
               color="primary"
-              weight="medium"
+              weight="semibold"
               className="text-base md:text-lg"
             >
-              Welcome Aboard! Lampros DAO Offers Training Sessions, Hackathons,
-              Bootcamps, And Cohorts Designed Specifically To Help Budding
-              Developers Like You Delve Into The Nuances Of Web3. Our Community
-              Is Here To Guide, Assist, And Mentor You Throughout Your Journey.
+              What&apos;s The Core Vision Of Lampros DAO?
             </Typography>
           </div>
-          <div className="col-span-1 flex justify-end pr-2">
+          <div className="w-20 flex justify-end pr-2">
             <Image
-              src={bottom}
-              alt="expand item"
+              src={top}
+              alt="collapse item"
               width={40}
               height={40}
               className="bg-[#DFCDF2] p-3 rounded-lg border border-black"
             />
           </div>
         </div>
-
-        {/* Row 3 */}
-        <div className="grid grid-cols-12 items-center">
-          <div className="p-10 col-span-2 md:col-span-1 border-r border-black text-center font-mono text-sm md:text-base">
+        <div className="flex flex-row items-center">
+          <div className="w-20 p-10 border-r border-black text-center text-sm md:text-base">
             <Typography
               variant="overline"
               color="primary"
               weight="bold"
-              className="--font-cs-bohemian text-sm md:text-base"
+              className="font-psygen  text-sm md:text-base"
             >
               03
             </Typography>
           </div>
-          <div className="col-span-9 px-4">
+          <div className="flex-1 px-4">
             <Typography
               variant="body2"
               color="primary"
-              weight="medium"
+              weight="semibold"
               className="text-base md:text-lg"
             >
-              Can I Contribute To Open-Source Projects Through Lampros DAO?
+              What&apos;s The Core Vision Of Lampros DAO?
             </Typography>
           </div>
-          <div className="col-span-1 flex justify-end pr-2">
+          <div className="w-20 flex justify-end pr-2">
             <Image
               src={top}
               alt="collapse item"
@@ -116,9 +110,9 @@ export default function Faq() {
       </div>
 
       {/* Footer tiles */}
-      <div className="grid grid-cols-[64px_1fr_64px_1fr_64px] md:grid-cols-[96px_1fr_96px_1fr_96px] w-full border-t border-black">
+      <div className="flex w-full border-t border-black">
         {/* Tile 1 */}
-        <div className="flex items-center justify-center bg-[#CBE9FF] border-r border-black py-10">
+        <div className="flex items-center justify-center w-20 bg-[#CBE9FF] border-r border-black">
           <Image
             src={question}
             alt="question mark"
@@ -129,7 +123,7 @@ export default function Faq() {
         </div>
 
         {/* Tile 2 */}
-        <div className="flex items-center justify-center bg-white border-r border-black py-10">
+        <div className="flex items-center justify-center flex-1 bg-white border-r border-black ">
           <Typography
             variant="h2"
             color="#000000"
@@ -142,7 +136,7 @@ export default function Faq() {
         </div>
 
         {/* Tile 3 */}
-        <div className="flex items-center justify-center bg-gradient-to-b from-black to-neutral-700 border-r border-black py-10">
+        <div className="flex items-center justify-center w-20 bg-gradient-to-b from-black to-neutral-700 border-r border-black ">
           <Image
             src={left}
             alt="previous"
@@ -153,12 +147,12 @@ export default function Faq() {
         </div>
 
         {/* Tile 4 */}
-        <div className="flex items-center justify-center bg-white border-r border-black py-10">
+        <div className="flex items-center justify-center flex-1 bg-white border-r border-black ">
           <Image src={clip} alt="clip" width={100} height={100} />
         </div>
 
         {/* Tile 5 */}
-        <div className="flex items-center justify-center bg-gradient-to-b from-black to-neutral-700 py-10">
+        <div className="flex items-center justify-center w-20 bg-gradient-to-b from-black to-neutral-700 ">
           <Image
             src={right}
             alt="next"

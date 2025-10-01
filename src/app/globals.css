@@ -54,3 +54,24 @@ body {
     transform: translateX(-50%);
   }
 }
+
+/* Font utility classes using next/font CSS variables */
+.font-mori {
+  font-family: var(--font-pp-mori), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Arial, sans-serif;
+}
+
+.font-bohemian {
+  font-family: var(--font-cs-bohemian), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Arial, sans-serif;
+}
+
+.font-psygen {
+  font-family: var(--font-psygen), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Arial, sans-serif;
+}
+/* Wavy letter style (static, no animation) */
+.wavy-letter {
+  display: inline-block;
+  transform-origin: 50% 80%;
+}

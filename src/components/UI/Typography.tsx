@@ -72,7 +72,7 @@ const getColorStyles = (color: string) => {
   };
 
   // If a hex color is provided, use tailwind arbitrary value syntax
-  if (color.startsWith('#')) {
+  if (color.startsWith("#")) {
     return `text-[${color}]`;
   }
 
@@ -142,7 +142,7 @@ export const Typography: React.FC<TypographyProps> = ({
 
   // Combine all styles
   const combinedClassName = [
-    "font-sans", // Base font family
+    "font-mori", // Base font family is PPMori
     getTypographyStyles(variant),
     getColorStyles(color),
     getWeightStyles(weight),
