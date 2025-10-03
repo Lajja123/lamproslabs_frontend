@@ -1,7 +1,9 @@
+import Homepage from "@/components/Homepage/Homepage";
 export default function Home() {
   return (
     <main className=" w-full">
-      <Home />
+      <Homepage />
+      
     </main>
   );
 }

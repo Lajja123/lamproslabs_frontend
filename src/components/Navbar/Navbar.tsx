@@ -6,8 +6,13 @@ import logo from "@/assests/logo.svg";
 import { Typography } from "@/components/UI/Typography"; // adjust path
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { useNavbarContent } from "@/hooks/useNavbarContent";
+import type { NavbarProps } from "@/types";
 
-export default function Navbar() {
+export default function Navbar({ centerContent }: NavbarProps) {
+  // Use hook to get dynamic content if no centerContent prop is provided
+  const dynamicContent = useNavbarContent();
+  const finalCenterContent = centerContent || dynamicContent;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
@@ -52,9 +57,9 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="relative flex items-center md:items-start justify-between w-[90%] mx-auto py-6">
+    <nav className="relative flex items-center md:items-start justify-between ">
       {/* Left: Logo */}
-      <div className="flex-1 flex items-center">
+      <div className="flex-1 flex items-center p-10">
         <Link href="/">
           <Image
             src={logo}
@@ -66,9 +71,29 @@ export default function Navbar() {
         </Link>
       </div>
 
+      {/* Center: Dynamic Content */}
+      <div className="hidden md:flex flex-1 justify-center ">
+        {finalCenterContent?.type === "image" && finalCenterContent.imageSrc ? (
+          <Image
+            src={finalCenterContent.imageSrc}
+            alt={finalCenterContent.imageAlt || "Center image"}
+            className="object-contain absolute -top-10 w-2/5"
+          />
+        ) : (
+          <Typography
+            variant="h2"
+            weight="bold"
+            color="primary"
+            className="text-center uppercase tracking-wider"
+          >
+            {finalCenterContent?.title || "LAMPROS DAO"}
+          </Typography>
+        )}
+      </div>
+
       {/* Right: Desktop Menu */}
-      <div className="hidden md:flex flex-1 justify-end">
-        <ul className="flex flex-col items-end gap-2">
+      <div className="hidden md:flex flex-1 justify-end ">
+        <ul className="fixed flex flex-col items-end gap-2 bg-[#FFFFFF] p-10 z-10">
           <li>
             <Link href="/" className="group">
               <Typography
@@ -118,6 +143,28 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
+      </div>
+
+      {/* Center: Mobile Dynamic Content */}
+      <div className="flex md:hidden flex-1 justify-center">
+        {finalCenterContent?.type === "image" && finalCenterContent.imageSrc ? (
+          <Image
+            src={finalCenterContent.imageSrc}
+            alt={finalCenterContent.imageAlt || "Center image"}
+            width={80}
+            height={80}
+            className="object-contain"
+          />
+        ) : (
+          <Typography
+            variant="h3"
+            weight="bold"
+            color="primary"
+            className="text-center uppercase tracking-wider"
+          >
+            {finalCenterContent?.title || "LAMPROS DAO"}
+          </Typography>
+        )}
       </div>
 
       {/* Right: Mobile Hamburger */}
