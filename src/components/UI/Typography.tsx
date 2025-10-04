@@ -49,7 +49,7 @@ const getTypographyStyles = (variant: string) => {
     caption: "text-xs leading-normal tracking-wide uppercase",
     overline: "text-xs leading-normal tracking-widest uppercase",
     button:
-      "text-sm md:text-base leading-none tracking-wide uppercase font-medium",
+      "text-sm md:text-base leading-none tracking-wide uppercase font-medium font-ppmori",
     logo: "text-2xl md:text-3xl lg:text-4xl leading-none tracking-wider font-light",
     accent: "text-lg md:text-xl leading-relaxed tracking-wide",
   };
@@ -62,7 +62,7 @@ const getColorStyles = (color: string) => {
   const colors = {
     // mapped to your project palette only
     primary: "text-[#1A1A1A]",
-    secondary: "text-[#2F2B2B]",
+    secondary: "text-[#DFF48D]",
     accent: "text-[#A885CD]",
     white: "text-[#DFCDF2]",
     gray: "text-[#2F2B2B]",

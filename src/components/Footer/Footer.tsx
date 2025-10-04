@@ -20,7 +20,7 @@ export default function Footer() {
       >
         <Typography
           variant="button"
-          color="#DFF48D"
+          color="secondary"
           align="center"
           className="p-2 md:p-5"
         >
@@ -28,7 +28,7 @@ export default function Footer() {
         </Typography>
         <Typography
           variant="button"
-          color="#DFF48D"
+          color="secondary"
           align="center"
           className="p-2 md:p-5"
         >
@@ -36,7 +36,7 @@ export default function Footer() {
         </Typography>
         <Typography
           variant="button"
-          color="#DFF48D"
+          color="secondary"
           align="center"
           className="p-2 md:p-5"
         >
@@ -44,7 +44,7 @@ export default function Footer() {
         </Typography>
         <Typography
           variant="button"
-          color="#DFF48D"
+          color="secondary"
           align="center"
           className="p-2 md:p-5"
         >

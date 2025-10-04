@@ -2,165 +2,181 @@ import Image from "next/image";
 import left from "@/assests/common/left.svg";
 import right from "@/assests/common/right.svg";
 import top from "@/assests/Faq/top.svg";
-import bottom from "@/assests/Faq/bottom.svg";
 import question from "@/assests/Faq/question.svg";
 import clip from "@/assests/Faq/clip.svg";
 import { Typography } from "@/components/UI/Typography";
+import {
+  commonStyles,
+  stylePresets,
+  combineStyles,
+} from "@/utils/commonStyles";
+
+// Reusable components
+const NumberCell = ({
+  number,
+  rowStart,
+}: {
+  number: string;
+  rowStart?: string;
+}) => (
+  <div
+    className={combineStyles(
+      stylePresets.faq.numberCell,
+      rowStart ? `row-start-${rowStart}` : ""
+    )}
+  >
+    <Typography
+      variant="overline"
+      color="primary"
+      weight="bold"
+      className="font-psygen text-sm md:text-base"
+    >
+      {number}
+    </Typography>
+  </div>
+);
+
+const ContentCell = ({
+  children,
+  rowStart,
+  iconSrc = top,
+}: {
+  children: React.ReactNode;
+  rowStart?: string;
+  iconSrc?: string;
+}) => (
+  <div
+    className={combineStyles(
+      stylePresets.faq.contentCell,
+      rowStart ? `row-start-${rowStart}` : ""
+    )}
+  >
+    <div className="flex-1 min-w-0 pr-4">{children}</div>
+    <div className="flex-shrink-0">
+      <Image
+        src={iconSrc}
+        alt="collapse item"
+        width={40}
+        height={40}
+        className={commonStyles.components.iconContainer.purple}
+      />
+    </div>
+  </div>
+);
+
+const NavigationButton = ({
+  src,
+  alt,
+  colStart,
+  rowStart,
+  background = commonStyles.background.dark,
+}: {
+  src: string;
+  alt: string;
+  colStart?: string;
+  rowStart?: string;
+  background?: string;
+}) => (
+  <div
+    className={combineStyles(
+      stylePresets.faq.navCell,
+      colStart ? `col-start-${colStart}` : "",
+      rowStart ? `row-start-${rowStart}` : "",
+      background
+    )}
+  >
+    <Image
+      src={src}
+      alt={alt}
+      width={70}
+      height={70}
+      className={commonStyles.components.navButton}
+    />
+  </div>
+);
 
 export default function Faq() {
   return (
     <>
-      {/* Rows */}
-      <div className="w-full border-y border-black  divide-black">
-        {/* Row 1 */}
+      <div className={commonStyles.grid.cols10}>
+        <NumberCell number="01" />
 
-        <div className="flex flex-row items-center ">
-          <div className="w-20 p-10 border-r border-black text-center text-sm md:text-base">
-            <Typography
-              variant="overline"
-              color="primary"
-              weight="bold"
-              className="font-psygen text-sm md:text-base"
-            >
-              01
-            </Typography>
-          </div>
-          <div className="flex-1 px-4">
-            <Typography
-              variant="body2"
-              color="primary"
-              weight="semibold"
-              className="text-base md:text-lg"
-            >
-              What&apos;s The Core Vision Of Lampros DAO?
-            </Typography>
-          </div>
-          <div className="w-20 flex justify-end pr-2">
-            <Image
-              src={top}
-              alt="collapse item"
-              width={40}
-              height={40}
-              className="bg-[#DFCDF2] p-3 rounded-lg border border-black"
-            />
-          </div>
-        </div>
-        <div className="flex flex-row    items-center">
-          <div className="w-20 p-10 border-r border-black text-center text-sm md:text-base">
-            <Typography
-              variant="overline"
-              color="primary"
-              weight="bold"
-              className="font-psygen  text-sm md:text-base"
-            >
-              02
-            </Typography>
-          </div>
-          <div className="flex-1 px-4">
-            <Typography
-              variant="body2"
-              color="primary"
-              weight="semibold"
-              className="text-base md:text-lg"
-            >
-              What&apos;s The Core Vision Of Lampros DAO?
-            </Typography>
-          </div>
-          <div className="w-20 flex justify-end pr-2">
-            <Image
-              src={top}
-              alt="collapse item"
-              width={40}
-              height={40}
-              className="bg-[#DFCDF2] p-3 rounded-lg border border-black"
-            />
-          </div>
-        </div>
-        <div className="flex flex-row items-center">
-          <div className="w-20 p-10 border-r border-black text-center text-sm md:text-base">
-            <Typography
-              variant="overline"
-              color="primary"
-              weight="bold"
-              className="font-psygen  text-sm md:text-base"
-            >
-              03
-            </Typography>
-          </div>
-          <div className="flex-1 px-4">
-            <Typography
-              variant="body2"
-              color="primary"
-              weight="semibold"
-              className="text-base md:text-lg"
-            >
-              What&apos;s The Core Vision Of Lampros DAO?
-            </Typography>
-          </div>
-          <div className="w-20 flex justify-end pr-2">
-            <Image
-              src={top}
-              alt="collapse item"
-              width={40}
-              height={40}
-              className="bg-[#DFCDF2] p-3 rounded-lg border border-black"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Footer tiles */}
-      <div className="flex w-full border-t border-black">
-        {/* Tile 1 */}
-        <div className="flex items-center justify-center w-20 bg-[#CBE9FF] border-r border-black">
-          <Image
-            src={question}
-            alt="question mark"
-            width={40}
-            height={40}
-            className="w-10 h-10"
-          />
-        </div>
-
-        {/* Tile 2 */}
-        <div className="flex items-center justify-center flex-1 bg-white border-r border-black ">
+        <ContentCell>
           <Typography
-            variant="h2"
-            color="#000000"
+            variant="body2"
+            color="primary"
+            weight="normal"
+            className={combineStyles(
+              commonStyles.typography.body.medium,
+              commonStyles.typography.wrap.words
+            )}
+          >
+            What&apos;s The Core Vision Of Lampros DAO?
+          </Typography>
+        </ContentCell>
+
+        <NumberCell number="02" rowStart="2" />
+
+        <ContentCell rowStart="2">
+          <Typography
+            variant="body2"
+            color="primary"
+            weight="normal"
+            className={combineStyles(
+              commonStyles.typography.body.medium,
+              commonStyles.typography.wrap.words
+            )}
+          >
+            Welcome aboard! Lampros DAO offers training sessions, hackathons,
+            bootcamps, and cohorts designed specifically to help budding
+            developers like you delve into the nuances of web3. Our community is
+            here to guide, assist, and mentor you throughout your journey.
+          </Typography>
+        </ContentCell>
+
+        <NumberCell number="03" rowStart="3" />
+
+        <ContentCell rowStart="3">
+          <Typography
+            variant="body2"
+            color="primary"
+            weight="normal"
+            className={combineStyles(
+              commonStyles.typography.body.medium,
+              "font-ppmori",
+              commonStyles.typography.wrap.words
+            )}
+          >
+            Can I contribute to open-source projects through Lampros DAO?
+          </Typography>
+        </ContentCell>
+
+        <div className={stylePresets.faq.questionCell}>
+          <Image src={question} alt="question mark" />
+        </div>
+
+        <div className={stylePresets.faq.titleCell}>
+          <Typography
+            variant="h1"
+            color="primary"
             weight="semibold"
             align="center"
-            className="tracking-tight text-6xl md:text-7xl"
+            className={combineStyles(
+              commonStyles.typography.heading.h1,
+              "font-ppmori"
+            )}
           >
-            FAQ
+            F <span className="uppercase font-bohemian wavy-letter">A</span> Q
           </Typography>
         </div>
 
-        {/* Tile 3 */}
-        <div className="flex items-center justify-center w-20 bg-gradient-to-b from-black to-neutral-700 border-r border-black ">
-          <Image
-            src={left}
-            alt="previous"
-            width={40}
-            height={40}
-            className="w-10 h-10 rounded-full ring-1 ring-white"
-          />
+        <NavigationButton src={left} alt="previous" colStart="6" rowStart="4" />
+
+        <div className={stylePresets.faq.clipCell}>
+          <Image src={clip} alt="clip" />
         </div>
 
-        {/* Tile 4 */}
-        <div className="flex items-center justify-center flex-1 bg-white border-r border-black ">
-          <Image src={clip} alt="clip" width={100} height={100} />
-        </div>
-
-        {/* Tile 5 */}
-        <div className="flex items-center justify-center w-20 bg-gradient-to-b from-black to-neutral-700 ">
-          <Image
-            src={right}
-            alt="next"
-            width={40}
-            height={40}
-            className="w-10 h-10 rounded-full ring-1 ring-white"
-          />
-        </div>
+        <NavigationButton src={right} alt="next" colStart="10" rowStart="4" />
       </div>
     </>
   );

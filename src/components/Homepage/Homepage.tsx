@@ -9,7 +9,7 @@ export default function Homepage() {
       <Hero />
       <Section2 />
       <Research />
-      {/* <Faq /> */}
+      <Faq />
     </>
   );
 }

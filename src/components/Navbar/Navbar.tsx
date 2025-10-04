@@ -57,9 +57,9 @@ export default function Navbar({ centerContent }: NavbarProps) {
   }, [isMenuOpen]);
 
   return (
-    <nav className="relative flex items-center md:items-start justify-between ">
+    <nav className="relative flex items-start md:items-start justify-between ">
       {/* Left: Logo */}
-      <div className="flex-1 flex items-center p-10">
+      <div className="flex-1 flex  p-10">
         <Link href="/">
           <Image
             src={logo}
@@ -72,7 +72,7 @@ export default function Navbar({ centerContent }: NavbarProps) {
       </div>
 
       {/* Center: Dynamic Content */}
-      <div className="hidden md:flex flex-1 justify-center ">
+      <div className="hidden md:flex flex-1 justify-center items-center p-10 ">
         {finalCenterContent?.type === "image" && finalCenterContent.imageSrc ? (
           <Image
             src={finalCenterContent.imageSrc}
@@ -81,19 +81,82 @@ export default function Navbar({ centerContent }: NavbarProps) {
           />
         ) : (
           <Typography
-            variant="h2"
+            variant="h1"
             weight="bold"
             color="primary"
-            className="text-center uppercase tracking-wider"
+            className="text-center uppercase tracking-wider "
           >
-            {finalCenterContent?.title || "LAMPROS DAO"}
+            {finalCenterContent?.title
+              ? (() => {
+                  const title = finalCenterContent.title;
+
+                  switch (title) {
+                    case "About Us":
+                      return (
+                        <>
+                          <span className="uppercase font-bohemian wavy-letter">
+                            A
+                          </span>
+                          bout{" "}
+                          <span className="uppercase font-bohemian wavy-letter">
+                            U
+                          </span>
+                          s
+                        </>
+                      );
+                    case "Governance":
+                      return (
+                        <>
+                          G
+                          <span className="uppercase font-bohemian wavy-letter">
+                            o
+                          </span>
+                          <span className="uppercase font-bohemian wavy-letter">
+                            v
+                          </span>
+                          ern
+                          <span className="uppercase font-bohemian wavy-letter">
+                            a
+                          </span>
+                          nc
+                          <span className="uppercase font-bohemian wavy-letter">
+                            e
+                          </span>
+                        </>
+                      );
+                    case "Contribution":
+                      return (
+                        <>
+                          C
+                          <span className="uppercase font-bohemian wavy-letter">
+                            o
+                          </span>
+                          <span className="uppercase font-bohemian wavy-letter">
+                            nt
+                          </span>
+                          rib
+                          <span className="uppercase font-bohemian wavy-letter">
+                            u
+                          </span>
+                          t
+                          <span className="uppercase font-bohemian wavy-letter">
+                            i
+                          </span>
+                          on
+                        </>
+                      );
+                    default:
+                      return title;
+                  }
+                })()
+              : finalCenterContent?.title}
           </Typography>
         )}
       </div>
 
       {/* Right: Desktop Menu */}
       <div className="hidden md:flex flex-1 justify-end ">
-        <ul className="fixed flex flex-col items-end gap-2 bg-[#FFFFFF] p-10 z-10">
+        <ul className=" flex flex-col items-end gap-2 bg-[#FFFFFF] p-10 z-10 rounded-lg">
           <li>
             <Link href="/" className="group">
               <Typography
@@ -157,12 +220,74 @@ export default function Navbar({ centerContent }: NavbarProps) {
           />
         ) : (
           <Typography
-            variant="h3"
+            variant="h1"
             weight="bold"
             color="primary"
-            className="text-center uppercase tracking-wider"
+            className="text-center uppercase tracking-wider  p-10"
           >
-            {finalCenterContent?.title || "LAMPROS DAO"}
+            {finalCenterContent?.title
+              ? (() => {
+                  const title = finalCenterContent.title;
+
+                  switch (title) {
+                    case "About Us":
+                      return (
+                        <>
+                          <span className="uppercase font-bohemian wavy-letter">
+                            A
+                          </span>
+                          bout{" "}
+                          <span className="uppercase font-bohemian wavy-letter">
+                            U
+                          </span>
+                          s
+                        </>
+                      );
+                    case "Governance":
+                      return (
+                        <>
+                          G
+                          <span className="uppercase font-bohemian wavy-letter">
+                            o
+                          </span>
+                          v
+                          <span className="uppercase font-bohemian wavy-letter">
+                            e
+                          </span>
+                          rn
+                          <span className="uppercase font-bohemian wavy-letter">
+                            a
+                          </span>
+                          nce
+                        </>
+                      );
+                    case "Contribution":
+                      return (
+                        <>
+                          C
+                          <span className="uppercase font-bohemian wavy-letter">
+                            o
+                          </span>
+                          ntr
+                          <span className="uppercase font-bohemian wavy-letter">
+                            i
+                          </span>
+                          b
+                          <span className="uppercase font-bohemian wavy-letter">
+                            u
+                          </span>
+                          t
+                          <span className="uppercase font-bohemian wavy-letter">
+                            i
+                          </span>
+                          on
+                        </>
+                      );
+                    default:
+                      return title;
+                  }
+                })()
+              : "LAMPROS DAO"}
           </Typography>
         )}
       </div>

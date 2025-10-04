@@ -11,22 +11,16 @@ import bgImage2 from "@/assests/HeroSection2/hugeicon-bg.png";
 export default function Research() {
   return (
     <section className="relative w-full bg-[#121212] text-white  ">
-      <div className="grid grid-cols-6 grid-rows-5 gap-2">
-        <div className="col-span-3 row-span-5 border border-[#000000]">
-          <div className="w-full ">
-            <div className="relative w-full aspect-[4/3] md:aspect-[4/3]  ">
-              <Image
-                src={Clip}
-                alt="Metallic sculpture"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </div>
+      <div className="grid grid-cols-6 grid-rows-5">
+        <div className="col-span-3 row-span-5 flex items-center">
+          <Image
+            src={Clip}
+            alt="Metallic sculpture"
+            className=" w-[50%] mx-auto"
+          />
         </div>
-        <div className="col-span-3 row-span-4 col-start-4 border border-[#000000]">
-          <div className="border-1 space-y-6 px-4 md:px-6 lg:px-8 py-16 md:py-24">
+        <div className="col-span-3 row-span-4 border border-[#FFFFFF]">
+          <div className=" space-y-6 px-4 md:px-6 lg:px-8 py-16 md:py-24">
             <Typography
               variant="h1"
               weight="normal"
@@ -34,11 +28,11 @@ export default function Research() {
               color="#E9FCE4"
               className="uppercase tracking-[-0.02em] leading-[0.95] text-[40px] md:text-[68px] lg:text-[76px]"
             >
-              Govern{" "}
+              Govern
               <span className="uppercase font-bohemian wavy-letter">a</span>
               nce &
               <br />
-              Rese{" "}
+              Rese
               <span className="uppercase font-bohemian wavy-letter">a</span>
               rch
             </Typography>
@@ -60,46 +54,43 @@ export default function Research() {
           </div>
         </div>
 
-        <div className="col-start-4 row-start-5  border border-black relative flex items-center justify-center">
-          {" "}
+        <div className="col-start-4 row-start-5  border border-[#FFFFFF] relative flex items-center justify-center">
           <div
-
-          // style={{
-          //   backgroundImage: `url(${bgImage2.src})`,
-          //   backgroundSize: "cover",
-          //   backgroundPosition: "center",
-          //   backgroundRepeat: "no-repeat",
-          // }}
+            style={{
+              backgroundImage: `url(${bgImage2.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
           ></div>{" "}
           <Image
             src={ArrowLeft}
             alt="Next"
-            width={100}
-            height={100}
-            className="relative object-contain p-2 mx-auto border rounded-full"
+            width={70}
+            height={70}
+            className="relative object-contain p-3 mx-auto border border-[#FFFFFF] rounded-full "
           />{" "}
         </div>
 
-        <div className="col-start-5 row-start-5 border border-[#000000]">
-          <Image src={Clip2} alt="Emblem" className="mx-auto" />
+        <div className="col-start-5 w-full row-start-5 border border-[#FFFFFF] flex items-center justify-center">
+          <Image src={Clip2} alt="Emblem" className="w-[70%]" />
         </div>
-        <div className="col-start-6 row-start-5 border border-[#000000]">
+        <div className="col-start-6 row-start-5 border border-[#FFFFFF] flex items-center justify-center">
           {" "}
           <div
-
-          // style={{
-          //   backgroundImage: `url(${bgImage2.src})`,
-          //   backgroundSize: "cover",
-          //   backgroundPosition: "center",
-          //   backgroundRepeat: "no-repeat",
-          // }}
+            style={{
+              backgroundImage: `url(${bgImage2.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
           ></div>
           <Image
             src={ArrowRight}
             alt="Next"
-            width={100}
-            height={100}
-            className="relative object-contain p-2 mx-auto border rounded-full"
+            width={70}
+            height={70}
+            className="relative object-contain p-3 mx-auto border border-[#FFFFFF] rounded-full"
           />{" "}
         </div>
       </div>

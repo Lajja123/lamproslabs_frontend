@@ -55,7 +55,7 @@ export default function Section2() {
           <div className="flex-1 space-y-6 max-w-2xl">
             <Typography
               variant="body1"
-              color="#000000"
+              color="primary"
               weight="light"
               className="tracking-wide"
             >
@@ -67,7 +67,7 @@ export default function Section2() {
             </Typography>
             <Typography
               variant="body1"
-              color="#000000"
+              color="primary"
               weight="light"
               className="tracking-wide"
             >

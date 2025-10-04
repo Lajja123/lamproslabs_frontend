@@ -1,3 +1,9 @@
+import Hero from "@/components/About/Hero";
+
 export default function page() {
-  return <div>About Us</div>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
