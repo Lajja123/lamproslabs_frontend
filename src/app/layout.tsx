@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Marquee from "@/components/UI/Marquee";
 import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
+import Footer from "@/components/Footer/HomeFooter";
 
 const PPMori = localFont({
   src: "./fonts/PPMori-Regular.otf",

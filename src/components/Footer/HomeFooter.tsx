@@ -11,9 +11,9 @@ import lampros from "@/assests/Footer/lampros-dao.png";
 import rectangle from "@/assests/Footer/Rectangle.svg";
 import { Typography } from "@/components/UI/Typography";
 
-export default function Footer() {
+export default function HomeFooter() {
   return (
-    <footer className="w-full bg-[#FFFFFF] text-white ">
+    <footer className="w-full bg-[#000000] text-white ">
       <div
         className="grid grid-cols-2 md:grid-cols-4 text-center border border-white divide-x md:divide-x divide-y md:divide-y-0 divide-white/60"
         style={{ fontFamily: "PP Mori" }}

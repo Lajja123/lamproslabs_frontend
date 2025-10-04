@@ -1,3 +1,9 @@
+import Hero from "@/components/Governance/Hero";
+
 export default function page() {
-  return <div>Governance</div>;
+  return (
+    <div>
+      <Hero />
+    </div>
+  );
 }

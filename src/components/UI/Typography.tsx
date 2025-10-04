@@ -23,7 +23,7 @@ interface TypographyProps {
     | "secondary"
     | "accent"
     | "white"
-    | "gray"
+    | "offset"
     | "dark"
     | "gradient"
     | `#${string}`; // allow hex colors like #1a1a1a
@@ -46,8 +46,8 @@ const getTypographyStyles = (variant: string) => {
     subtitle2: "text-base md:text-lg leading-relaxed tracking-wide",
     body1: "text-base leading-relaxed",
     body2: "text-sm leading-relaxed",
-    caption: "text-xs leading-normal tracking-wide uppercase",
-    overline: "text-xs leading-normal tracking-widest uppercase",
+    caption: "text-xs leading-normal tracking-wide ",
+    overline: "text-xs leading-normal tracking-widest ",
     button:
       "text-sm md:text-base leading-none tracking-wide uppercase font-medium font-ppmori",
     logo: "text-2xl md:text-3xl lg:text-4xl leading-none tracking-wider font-light",
@@ -62,13 +62,10 @@ const getColorStyles = (color: string) => {
   const colors = {
     // mapped to your project palette only
     primary: "text-[#1A1A1A]",
-    secondary: "text-[#DFF48D]",
+    secondary: "text-[#000000]",
     accent: "text-[#A885CD]",
-    white: "text-[#DFCDF2]",
-    gray: "text-[#2F2B2B]",
-    dark: "text-[#101010]",
-    // no gradients in palette; map to accent color
-    gradient: "text-[#A885CD]",
+    offset: "text-[#F3FBD4]",
+    white: "text-[#FFFFFF]",
   };
 
   // If a hex color is provided, use tailwind arbitrary value syntax
